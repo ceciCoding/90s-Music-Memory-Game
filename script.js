@@ -9,7 +9,6 @@ function flipCard() {
   if (lockboard) return;
   //handle double clicking bug
   if (this === firstCard) return;
-  console.log(this);
   this.classList.add('flip');
 
   //get the front face image and show it, add a little bit timeout for effect
@@ -35,15 +34,14 @@ function flipCard() {
   checkMatch();
 }
 
-
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-console.log(cards);
 
 function checkMatch() {
   if (firstCard.dataset.album === secondCard.dataset.album) {
-    playSong();
-    disableCards();
+    setTimeout(() => {
+      playSong();
+      disableCards();
+    }, 800);
   } else {
     unflipCards();
   }
@@ -64,9 +62,9 @@ function unflipCards() {
     secondCard.classList.remove('flip');
     //reset images
     firstImage.classList.add('d-none');
-    firstImage.classList.remove("d-block")
+    firstImage.classList.remove("d-block");
     secondImage.classList.add('d-none');
-    secondImage.classList.remove("d-block")
+    secondImage.classList.remove("d-block");
     resetBoard();
   }, 1000);
 }
@@ -86,11 +84,11 @@ function resetBoard() {
 
 //audio functions
 function playSong() {
-  const audio = secondCard.querySelector('audio');
-  if (!audio) return;
-  audio.currentTime = 0;
-  audio.play();
-}
+    const audio = secondCard.querySelector('audio');
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+} 
 
 function pauseSong() {
   const songs = document.querySelectorAll('audio');

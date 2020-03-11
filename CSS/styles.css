@@ -40,11 +40,13 @@ nav {
   margin-top: 1rem;
 }
 
+
 nav ul li {
   font-family: 'Technology', monospace;
   color: lightgreen;
   list-style: none;
   font-size: 2rem;
+  animation: slide-right 7s linear infinite;
 }
 
 .board
@@ -124,8 +126,10 @@ footer {
   position: absolute;
   width: 90%;
   height: 80%;
-  fill: none;
-  stroke-width: .3rem;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .card:active
@@ -161,6 +165,17 @@ footer {
   display:block;
 }
 
+/* @keyframes slide-right {
+  from {
+    margin-left: -100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 100%;
+    width: 100%;
+  }
+} */
 
 @media screen and (orientation: portrait) {
   body::after {
