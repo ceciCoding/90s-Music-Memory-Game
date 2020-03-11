@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body > * {border-radius: 8px;}
+
+body
+{
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background: linear-gradient(145deg, #8c8e9a, #767882);
+  /*these are for different browsers
+  -webkit-background-size: cover; 
+  -moz-background-size: cover;
+  -o-background-size: cover;*/
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 70vw auto; 
+  grid-template-rows: 1.2fr 4.5fr 1fr;
+  grid-row-gap: 2em;
+  grid-column-gap: 0;
+}
+
+nav {
+  background-color: #26262A;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+nav ul li {
+  font-family: 'Technology', monospace;
+  color: lightgreen;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.board
+{
+  background-color: #6A6C75;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.card
+{
+  overflow: hidden;
+  position: relative;
+  background: #838590;
+  transform:scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 15px 15px 29px #56585f, 
+              inset -15px -15px 29px #b0b2c1;
+}
+
+
+.controls-1 {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  stroke: #54555B;
+  fill: #54555B; 
+}
+
+.equalizer {
+  position: absolute;
+  align-self: flex-end;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.controls-2 {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.volume {
+  width: 60%;
+  position: absolute; 
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: #6A6C75;
+  grid-row: 3/4;
+  grid-column: 2/3;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disc {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  fill: none;
+  stroke-width: .3rem;
+}
+
+.card:active
+{
+  transform: scale(.92);
+  transition: transform .3s;
+}
+
+.card.flip
+{
+  transform: rotateY(180deg);
+}
+
+.back-face,
+.front-face
+{
+  width: 100%;  
+  position: absolute;
+  padding: 1rem;
+}
+
+.front-face
+{
+  transform: rotateY(180deg);
+  z-index:11;
+}
+
+.d-none {
+  display:none;
+}
+
+.d-block {
+  display:block;
+}
+
+
+@media screen and (orientation: portrait) {
+  body::after {
+    content: "Turn your device to play";
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgreen;
+    font-family: 'Technology', sans-serif;
+    font-size: 5rem;
+    overflow: hidden;
+    text-align: center; 
+  }
+
+  body {
+    background-color: lightgreen;
+  }
+
+  nav,
+  section, 
+  footer {
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+@media  (max-width: 812px) {
+  body,
+  .board {
+    grid-gap: .5em; 
+  }
+  nav ul li {
+    font-size: 1.2em;
+  }
+
+  .back-face,
+  .front-face {
+    padding: 0.5em;
+  }
+}
+
+@media (min-width: 813px) and (max-width: 1024px) {
+  body {
+    grid-gap: .5em;
+    height: 100vh;
+    grid-template-columns: 1fr 70vw 1fr;
+    grid-template-rows: 6rem 50% 6rem;
+  }
+
+  .board {
+    grid-gap: .5em;
+  }
+
+  .back-face,
+  .front-face {
+    padding: 0.5em;
+  }
+
+} 
