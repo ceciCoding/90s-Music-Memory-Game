@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.card');
 const resetButton = document.querySelector('.reset');
+const volumeSlider = document.querySelector('.slider');
 
 let hasFlippedCard = false;
 let lockboard = false;
@@ -101,3 +102,14 @@ function pauseSong() {
     song.pause();
   }
 }
+
+function volumeRange() {
+  const songs = document.querySelectorAll('audio');
+  let audio = Array.from(songs);
+  let volumeValue = volumeSlider.value;
+  for (let song of audio) {
+    song.volume = `${volumeValue}`;
+  }
+}
+  
+volumeSlider.addEventListener('change', volumeRange);

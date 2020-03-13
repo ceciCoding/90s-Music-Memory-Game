@@ -9,7 +9,7 @@
   box-sizing: inherit;
 }
 
-body > * {border-radius: 8px;}
+body > * {border-radius: .5rem;}
 
 body
 {
@@ -93,18 +93,20 @@ svg {
 .equalizer {
   position: absolute;
   align-self: flex-end;
-  width: 70%;
-  margin-bottom: 2rem;
+  width: 60%;
+  padding-bottom: 2rem;
   margin-right: 1rem;
 }
 
 .reset {
   position: absolute;
   align-self: flex-start;
-  width: 50%;
-  margin-top: 2rem;
+  width: 45%;
+  padding-top: 2rem;
   transform:scale(1);
   transition: transform .5s;
+  fill: #26262A;
+  stroke: #26262A;
 }
 
 .controls-2 {
@@ -115,11 +117,52 @@ svg {
   position: relative;
 }
 
-.volume {
-  width: 60%;
+.vol-drawing {
+  width: 50%;
   position: absolute; 
   align-self: flex-end;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.vol-controls {
+  width: 60%;
+  position: absolute;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background: #26262A;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: lightgreen;
+}
+
+.slider::-moz-range-thumb {
+  background-color: lightgreen;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: none;
+}
+
+label {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  font-family: monospace;
 }
 
 footer {
@@ -139,7 +182,8 @@ footer {
 }
 
 .card:hover,
-.reset:hover {
+.reset:hover,
+[type="range"]:hover {
   cursor: pointer;
 }
 
@@ -191,28 +235,33 @@ footer {
   to {
     margin-left: 100%;
     width: 100%;
+    visibility: hidden;
   }
-} */
+}  */
 
 @media screen and (orientation: portrait) {
   body::after {
     content: "Turn your device to play";
     width: 100vw;
     height: 100vh;
-    background-color: lightgreen;
+    color: lightgreen;
     font-family: 'Technology', sans-serif;
-    font-size: 5rem;
+    font-size: 3rem;
     overflow: hidden;
     text-align: center; 
-  }
-
-  body {
-    background-color: lightgreen;
+    margin-top: 40vh;
+    background-color: linear-gradient(145deg, #8c8e9a, #767882); 
   }
 
   nav,
   section, 
-  footer {
+  footer,
+  .board,
+  svg,
+  .vol-controls,
+  .controls-1,
+  .controls-2
+  {
     display: none;
   }
 
@@ -234,9 +283,17 @@ footer {
   .front-face {
     padding: 0.5em;
   }
+
+  nav {
+    margin-top: .5rem;
+  }
+
+   .equalizer {
+    margin-right: .5rem;
+  } 
 }
 
-@media (min-width: 813px) and (max-width: 1024px) {
+@media (min-width: 813px) and (max-width: 1023px) {
   body {
     grid-gap: .5em;
     height: 100vh;
