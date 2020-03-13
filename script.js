@@ -1,9 +1,12 @@
-var cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card');
+const resetButton = document.querySelector('.reset');
 
-var hasFlippedCard = false;
-var lockboard = false;
-var firstCard, secondCard;
-var firstImage, secondImage;
+let hasFlippedCard = false;
+let lockboard = false;
+let firstCard, secondCard;
+let firstImage, secondImage;
+
+//TODO : FIX THIS
 
 function flipCard() {
   if (lockboard) return;

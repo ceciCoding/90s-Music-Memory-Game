@@ -95,6 +95,16 @@ svg {
   align-self: flex-end;
   width: 70%;
   margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+
+.reset {
+  position: absolute;
+  align-self: flex-start;
+  width: 50%;
+  margin-top: 2rem;
+  transform:scale(1);
+  transition: transform .5s;
 }
 
 .controls-2 {
@@ -128,14 +138,21 @@ footer {
   height: 80%;
 }
 
-.card:hover {
+.card:hover,
+.reset:hover {
   cursor: pointer;
 }
 
-.card:active
+.card:active,
+.reset:active
 {
   transform: scale(.92);
   transition: transform .3s;
+}
+
+.reset:active {
+  fill: lightgreen;
+  stroke: lightgreen;
 }
 
 .card.flip
