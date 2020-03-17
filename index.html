@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>90s Music Memory Game</title>
   <link rel="stylesheet" href="CSS/normalize.css">
-  <link rel="stylesheet" href="sweetalert2.min.css">
   <link rel="stylesheet" type = "text/css" href = "CSS/styles.css">
 </head>
 <body>
@@ -37,7 +36,8 @@
     </div>
     <div class="card" data-album = "portishead">
       <img class= "front-face d-none" src="Images/portishead.jpg" alt="Portishead omonimous album cover">
-      <img class="back-face" src="Images/cd_edit.png" alt="cd without cover for memory game">
+        <img class="back-face" src="Images/cd_edit.png" alt="cd without cover for memory game">
+        <source srcset="imgages/cd-big.jpg" media="(min-width: 800px)">
       <audio src="music/all-mine.mp3"></audio>
     </div>
     <div class="card" data-album = "okcomputer">
@@ -115,19 +115,27 @@
       <div class="vol-controls">
         <label for="range">Volume</label>
         <input type="range" min="0" max="1" step="0.01" value="0.5" class="slider">
-        <!-- <div class="range-number-circle">
-          <p id="range-number"></p>
-        </div> -->
       </div>
       <svg class="vol-drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 98"><title>Sin título-1</title><path d="M459.21,433.55a49,49,0,1,0,49,49A49,49,0,0,0,459.21,433.55Zm0,94a45,45,0,1,1,45-45A45,45,0,0,1,459.21,527.55Z" transform="translate(-410.21 -433.55)"/><path d="M485.32,459.27l2.89-2.88a2,2,0,0,0-2.83-2.83l-2.89,2.89A34.23,34.23,0,0,1,485.32,459.27Z" transform="translate(-410.21 -433.55)"/><path d="M461.21,447.61v-4.06a2,2,0,0,0-4,0v4.06c.67,0,1.33-.06,2-.06S460.55,447.58,461.21,447.61Z" transform="translate(-410.21 -433.55)"/><path d="M498.21,480.55h-4.06c0,.67.06,1.33.06,2s0,1.34-.06,2h4.06a2,2,0,0,0,0-4Z" transform="translate(-410.21 -433.55)"/><path d="M433.11,459.27a34.23,34.23,0,0,1,2.83-2.82l-2.89-2.89a2,2,0,0,0-2.83,2.83Z" transform="translate(-410.21 -433.55)"/><path d="M420.21,480.55a2,2,0,0,0,0,4h4.07c0-.66-.07-1.33-.07-2s0-1.33.07-2Z" transform="translate(-410.21 -433.55)"/><path d="M459.21,451.55a31,31,0,1,0,31,31A31,31,0,0,0,459.21,451.55Zm0,58a27,27,0,1,1,27-27A27,27,0,0,1,459.21,509.55Z" transform="translate(-410.21 -433.55)"/><path d="M459.21,459.55a7,7,0,1,0,7,7A7,7,0,0,0,459.21,459.55Zm0,10a3,3,0,1,1,3-3A3,3,0,0,1,459.21,469.55Z" transform="translate(-410.21 -433.55)"/></svg>
   </section> 
   <footer>
-    <!-- <svg  class="disc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 969 178"><title>Disc</title><path d="M21.89,188.5a8.39,8.39,0,0,1-8.39-8.39V19.89a8.39,8.39,0,0,1,8.39-8.39H973.11a8.39,8.39,0,0,1,8.39,8.39V180.11a8.39,8.39,0,0,1-8.39,8.39Zm10-170A9.4,9.4,0,0,0,22.5,27.9V171.19a9.4,9.4,0,0,0,9.39,9.39H963.11a9.4,9.4,0,0,0,9.39-9.39V27.9a9.4,9.4,0,0,0-9.39-9.39Z" transform="translate(-13 -11)"/><path d="M973.11,12A7.9,7.9,0,0,1,981,19.89V180.11a7.9,7.9,0,0,1-7.89,7.89H21.89A7.9,7.9,0,0,1,14,180.11V19.89A7.9,7.9,0,0,1,21.89,12H973.11M31.89,181.08H963.11a9.91,9.91,0,0,0,9.89-9.89V27.9A9.91,9.91,0,0,0,963.11,18H31.89A9.91,9.91,0,0,0,22,27.9V171.19a9.91,9.91,0,0,0,9.89,9.89M973.11,11H21.89A8.89,8.89,0,0,0,13,19.89V180.11A8.89,8.89,0,0,0,21.89,189H973.11a8.89,8.89,0,0,0,8.89-8.89V19.89A8.89,8.89,0,0,0,973.11,11ZM31.89,180.08A8.89,8.89,0,0,1,23,171.19V27.9A8.89,8.89,0,0,1,31.89,19H963.11A8.89,8.89,0,0,1,972,27.9V171.19a8.89,8.89,0,0,1-8.89,8.89Z" transform="translate(-13 -11)"/><path d="M479.31,136.56a3.26,3.26,0,0,1-3.25-3.25V65.75a3.26,3.26,0,0,1,3.25-3.25H880.42a3.26,3.26,0,0,1,3.25,3.25v67.56a3.26,3.26,0,0,1-3.25,3.25Zm4.21-71.68a4.24,4.24,0,0,0-4.24,4.25v60.42a4.25,4.25,0,0,0,4.24,4.25H876.2a4.26,4.26,0,0,0,4.25-4.25V69.13a4.25,4.25,0,0,0-4.25-4.25Z" transform="translate(-13 -11)"/><path  d="M880.42,63a2.75,2.75,0,0,1,2.75,2.75v67.56a2.75,2.75,0,0,1-2.75,2.75H479.31a2.75,2.75,0,0,1-2.75-2.75V65.75A2.75,2.75,0,0,1,479.31,63H880.42m-396.9,71.3H876.2a4.75,4.75,0,0,0,4.75-4.75V69.13a4.75,4.75,0,0,0-4.75-4.75H483.52a4.75,4.75,0,0,0-4.74,4.75v60.42a4.75,4.75,0,0,0,4.74,4.75M880.42,62H479.31a3.75,3.75,0,0,0-3.75,3.75v67.56a3.75,3.75,0,0,0,3.75,3.75H880.42a3.75,3.75,0,0,0,3.75-3.75V65.75A3.75,3.75,0,0,0,880.42,62Zm-396.9,71.3a3.74,3.74,0,0,1-3.74-3.75V69.13a3.74,3.74,0,0,1,3.74-3.75H876.2A3.75,3.75,0,0,1,880,69.13v60.42a3.75,3.75,0,0,1-3.75,3.75Z" transform="translate(-13 -11)"/><circle cx="138.5" cy="83.5" r="32"/><path d="M151.5,63A31.5,31.5,0,1,1,120,94.5,31.53,31.53,0,0,1,151.5,63m0-1A32.5,32.5,0,1,0,184,94.5,32.5,32.5,0,0,0,151.5,62Z" transform="translate(-13 -11)"/><circle cx="231.5" cy="83.5" r="32"/><path d="M244.5,63A31.5,31.5,0,1,1,213,94.5,31.53,31.53,0,0,1,244.5,63m0-1A32.5,32.5,0,1,0,277,94.5,32.5,32.5,0,0,0,244.5,62Z" transform="translate(-13 -11)"/></svg> -->
     <svg class="disc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1478 172"><title>Disc</title><path d="M21.1,184.5a9.62,9.62,0,0,1-9.6-9.6V23.1a9.62,9.62,0,0,1,9.6-9.6H1478.9a9.62,9.62,0,0,1,9.6,9.6V174.9a9.62,9.62,0,0,1-9.6,9.6Zm12-160A10.62,10.62,0,0,0,22.5,35.1V161.9a10.61,10.61,0,0,0,10.6,10.6H1464.9a10.61,10.61,0,0,0,10.6-10.6V35.1a10.61,10.61,0,0,0-10.6-10.6Z" transform="translate(-11 -13)"/><path d="M1478.9,14a9.11,9.11,0,0,1,9.1,9.1V174.9a9.11,9.11,0,0,1-9.1,9.1H21.1a9.11,9.11,0,0,1-9.1-9.1V23.1A9.11,9.11,0,0,1,21.1,14H1478.9M33.1,173H1464.9a11.11,11.11,0,0,0,11.1-11.1V35.1A11.11,11.11,0,0,0,1464.9,24H33.1A11.11,11.11,0,0,0,22,35.1V161.9A11.11,11.11,0,0,0,33.1,173M1478.9,13H21.1A10.1,10.1,0,0,0,11,23.1V174.9A10.1,10.1,0,0,0,21.1,185H1478.9a10.1,10.1,0,0,0,10.1-10.1V23.1A10.1,10.1,0,0,0,1478.9,13ZM33.1,172A10.1,10.1,0,0,1,23,161.9V35.1A10.1,10.1,0,0,1,33.1,25H1464.9A10.1,10.1,0,0,1,1475,35.1V161.9a10.1,10.1,0,0,1-10.1,10.1Z" transform="translate(-11 -13)"/><path d="M642.05,142.46a4.55,4.55,0,0,1-4.55-4.54V62.05a4.55,4.55,0,0,1,4.55-4.55h728.6a4.55,4.55,0,0,1,4.54,4.55v75.87a4.55,4.55,0,0,1-4.54,4.54Zm6-80A5.55,5.55,0,0,0,642.5,68v63.38a5.56,5.56,0,0,0,5.55,5.55h715.6a5.56,5.56,0,0,0,5.55-5.55V68a5.55,5.55,0,0,0-5.55-5.54Z" transform="translate(-11 -13)"/><path d="M1370.65,58a4.05,4.05,0,0,1,4,4v75.87a4,4,0,0,1-4,4H642.05a4.05,4.05,0,0,1-4-4V62.05a4.06,4.06,0,0,1,4-4h728.6m-722.6,79.47h715.6a6.06,6.06,0,0,0,6-6.05V68.05a6.06,6.06,0,0,0-6-6H648.05a6.05,6.05,0,0,0-6,6v63.37a6.06,6.06,0,0,0,6,6.05M1370.65,57H642.05a5,5,0,0,0-5,5v75.87a5,5,0,0,0,5,5h728.6a5,5,0,0,0,5-5V62.05a5,5,0,0,0-5-5Zm-722.6,79.47a5,5,0,0,1-5-5.05V68.05a5,5,0,0,1,5-5h715.6a5,5,0,0,1,5,5v63.37a5,5,0,0,1-5,5.05Z" transform="translate(-11 -13)"/><circle cx="209" cy="85" r="24.5"/><path d="M220,74a24,24,0,1,1-24,24,24,24,0,0,1,24-24m0-1a25,25,0,1,0,25,25,25,25,0,0,0-25-25Z" transform="translate(-11 -13)"/><circle cx="299" cy="85" r="24.5"/><path d="M310,74a24,24,0,1,1-24,24,24,24,0,0,1,24-24m0-1a25,25,0,1,0,25,25,25,25,0,0,0-25-25Z" transform="translate(-11 -13)"/></svg>
   </footer>
-  <script src="sweetalert2.all.min.js"></script>
-  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <div class="modal active" id="modal">
+      <div class="modal-header">
+          <button class="close-button" data-close-button=>&times;</button>
+      </div>
+      <div class="title">Welcome</div>
+      <div class="modal-body">
+        This is a memory game tributing some 1990's (kind of dark) music albums. <br>
+        Every time you guess correctly, a song from that album will play. <br>
+        If you want to restart the game you can use the <span>reset button</span>. <br>
+        You can control de <span>volume</span> with the handler on the right side of the screen. <br>
+        Good luck!
+      </div>
+      <div class="ok-button">OK</div>
+  </div>
+    <div class=active" id="overlay"></div>
   <script src="script.js"></script>  
 </body>
 </html>

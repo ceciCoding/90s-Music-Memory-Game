@@ -46,7 +46,6 @@ nav ul li {
   color: lightgreen;
   list-style: none;
   font-size: 2rem;
-  animation: slide-right 7s linear infinite;
 }
 
 .board
@@ -161,7 +160,7 @@ svg {
 
 label {
   font-size: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: .5rem;
   font-family: monospace;
 }
 
@@ -226,18 +225,102 @@ footer {
   display:block;
 }
 
-/* @keyframes slide-right {
-  from {
-    margin-left: -100%;
-    width: 300%; 
-  }
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /*top y left arriba se refieren al VP pero en el translate 
+    de abajo se refiere a sí mismo*/
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid;
+    z-index: 10;
+    background-color: #26262A;
+    width: 600px;
+    max-width: 80%;
+    color: white;
+    max-height: 80vh;
+    overflow: scroll;
+}
 
-  to {
-    margin-left: 100%;
-    width: 100%;
-    visibility: hidden;
-  }
-}  */
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.title {
+    font-family: 'Technology', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: lightgreen;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: monospace, sans-serif;
+    line-height: 1.5rem;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    /*lo que hace esto de abajo es que mientras esto sea invisible no capture click events*/
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.ok-button {
+  background-color: lightgreen;
+  color: #26262A;
+  height: 2rem;
+  width: 4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-family: 'Technology', monospace;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-body > span {
+  color: lightgreen;
+}
 
 @media screen and (orientation: portrait) {
   body::after {
@@ -260,7 +343,9 @@ footer {
   svg,
   .vol-controls,
   .controls-1,
-  .controls-2
+  .controls-2,
+  #modal,
+  #overlay
   {
     display: none;
   }
@@ -288,7 +373,7 @@ footer {
     margin-top: .5rem;
   }
 
-   .equalizer {
+  .equalizer {
     margin-right: .5rem;
   } 
 }
@@ -309,5 +394,4 @@ footer {
   .front-face {
     padding: 0.5em;
   }
-
 } 

@@ -1,14 +1,33 @@
 const cards = document.querySelectorAll('.card');
 const resetButton = document.querySelector('.reset');
 const volumeSlider = document.querySelector('.slider');
+const closeModalButton = document.querySelector('[data-close-button]');
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+const okButton = document.querySelector('.ok-button');
 
 let hasFlippedCard = false;
 let lockboard = false;
 let firstCard, secondCard;
 let firstImage, secondImage;
 
-//TODO : FIX THIS
+//event listeners
+cards.forEach(card => card.addEventListener('click', flipCard));
 
+volumeSlider.addEventListener('change', volumeRange);
+
+[okButton, closeModalButton].forEach(button => {
+  button.addEventListener('click', () => {
+    closeModal(modal);
+    overlay.classList.remove('active');
+  })
+});
+
+overlay.addEventListener('click', () => {
+  closeModal(modal);
+});
+
+//functions
 function flipCard() {
   if (lockboard) return;
   //handle double clicking bug
@@ -21,7 +40,6 @@ function flipCard() {
     cardImage.classList.add('d-block');
     cardImage.classList.remove("d-none")
   }, 100)
-
 
   if (!hasFlippedCard) {
     //first click
@@ -38,8 +56,6 @@ function flipCard() {
   checkMatch();
 }
 
-cards.forEach(card => card.addEventListener('click', flipCard));
-
 function checkMatch() {
   if (firstCard.dataset.album === secondCard.dataset.album) {
     setTimeout(() => {
@@ -50,7 +66,6 @@ function checkMatch() {
     unflipCards();
   }
 }
-
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
@@ -84,15 +99,16 @@ function resetBoard() {
     var randomPos = Math.floor(Math.random() * 18);
     card.style.order = randomPos;
   });
+  overlay.classList.add('active');
 })();
 
 //audio functions
 function playSong() {
-    const audio = secondCard.querySelector('audio');
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.play();
-} 
+  const audio = secondCard.querySelector('audio');
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+}
 
 function pauseSong() {
   const songs = document.querySelectorAll('audio');
@@ -111,5 +127,10 @@ function volumeRange() {
     song.volume = `${volumeValue}`;
   }
 }
-  
-volumeSlider.addEventListener('change', volumeRange);
+
+//function for modal
+function closeModal(modal) {
+  if (modal === null) return;
+  modal.classList.remove('active');
+  overlay.classList.remove('active');
+}
