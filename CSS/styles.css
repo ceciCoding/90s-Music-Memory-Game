@@ -1,3 +1,10 @@
+@font-face {
+  src: url("Font/Technology.ttf"),
+  url("Font/technology-webfont.woff"),
+  url("Font/technology-webfont.woff2");
+  font-family: "Technology";
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
