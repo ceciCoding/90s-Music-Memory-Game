@@ -1,7 +1,7 @@
 @font-face {
 font-family: "Technology";
 src: url("Font/technology-webfont.woff") format("woff"),
-url("Font/technology-webfont.woff2") format("opentype"),
+url("Font/technology-webfont.woff2") format("woff2"),
 }
 
 * {
