@@ -341,6 +341,7 @@ footer {
     text-align: center; 
     margin-top: 20vh;
     background-color: linear-gradient(145deg, #8c8e9a, #767882); 
+    padding: 1rem;
   }
 
   nav,
@@ -367,8 +368,13 @@ footer {
   .board {
     grid-gap: .5em; 
   }
+
+  body {
+    grid-template-rows: 1fr 5fr 1fr;
+  }
+
   nav ul li {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .back-face,
