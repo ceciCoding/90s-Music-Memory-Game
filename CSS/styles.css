@@ -9,7 +9,7 @@
   box-sizing: inherit;
 }
 
-body > * {border-radius: .5rem;}
+body > * {border-radius: 1rem;}
 
 body
 {
