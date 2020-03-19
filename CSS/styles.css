@@ -49,7 +49,7 @@ nav {
 
 
 nav ul li {
-  font-family: 'Technology', monospace;
+  font-family: 'Technology', 'Share Tech Mono',monospace;
   color: lightgreen;
   list-style: none;
   font-size: 2rem;
@@ -263,7 +263,7 @@ footer {
 }
 
 .title {
-    font-family: 'Technology', sans-serif;
+    font-family: 'Technology', 'Share Tech Mono', monospace;
     font-size: 1.5rem;
     font-weight: bold;
     color: lightgreen;
@@ -320,7 +320,7 @@ footer {
   align-items: center;
   margin-bottom: 1rem;
   border-radius: 8px;
-  font-family: 'Technology', monospace;
+  font-family: 'Technology', 'Share Tech Mono', monospace;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -335,11 +335,11 @@ footer {
     width: 100vw;
     height: 100vh;
     color: lightgreen;
-    font-family: 'Technology', sans-serif;
+    font-family: 'Technology', 'Share Tech Mono', sans-serif;
     font-size: 3rem;
     overflow: hidden;
     text-align: center; 
-    margin-top: 30vh;
+    margin-top: 20vh;
     background-color: linear-gradient(145deg, #8c8e9a, #767882); 
   }
 
