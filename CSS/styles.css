@@ -1,7 +1,6 @@
 @font-face {
 font-family: "Technology";
-src: url("Font/technology-webfont.woff") format("woff"),
-url("Font/technology-webfont.woff2") format("woff2"),
+src: url("Font/Technology.ttf");
 }
 
 * {
@@ -335,6 +334,7 @@ footer {
     height: 100vh;
     color: lightgreen;
     font-family: 'Technology', monospace;
+    text-transform: uppercase;
     font-size: 3rem;
     overflow: hidden;
     text-align: center; 
@@ -361,7 +361,7 @@ footer {
   }
 }
 
-@media  (max-width: 812px) {
+@media  (min-width: 400px) and (max-width: 767px) {
   body,
   .board {
     grid-gap: .5em; 
@@ -384,7 +384,7 @@ footer {
   } 
 }
 
-@media (min-width: 813px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   body {
     grid-gap: .5em;
     height: 100vh;
