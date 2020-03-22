@@ -115,7 +115,10 @@ function pauseSong() {
   if (!songs || songs === null) return;
   let audio = Array.from(songs);
   for (let song of audio) {
-    song.pause();
+    if (song.paused === false) {
+      song.pause();
+      break;
+    }   
   }
 }
 
