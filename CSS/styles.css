@@ -24,10 +24,9 @@ body
   width: 100vw;
   background-size: cover;
   background: linear-gradient(145deg, #8c8e9a, #767882);
-  /*these are for different browsers
   -webkit-background-size: cover; 
   -moz-background-size: cover;
-  -o-background-size: cover;*/
+  -o-background-size: cover;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto 70vw auto; 
@@ -236,8 +235,6 @@ footer {
     position: fixed;
     top: 50%;
     left: 50%;
-    /*top y left arriba se refieren al VP pero en el translate 
-    de abajo se refiere a sí mismo*/
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid;
@@ -298,7 +295,6 @@ footer {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,.5);
-    /*lo que hace esto de abajo es que mientras esto sea invisible no capture click events*/
     pointer-events: none;
     transition: 200ms ease-in-out;
 
@@ -355,10 +351,6 @@ footer {
   #modal,
   #overlay
   {
-    display: none;
-  }
-
-  svg {
     display: none;
   }
 }
