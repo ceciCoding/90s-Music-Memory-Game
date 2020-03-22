@@ -1,8 +1,3 @@
-@font-face {
-font-family: "Technology";
-src: url("Font/Technology.ttf");
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,11 +17,10 @@ body
   width: 100vw;
   background-size: cover;
   background: linear-gradient(145deg, #8c8e9a, #767882);
-  /*these are for different browsers
   -webkit-background-size: cover; 
   -moz-background-size: cover;
-  -o-background-size: cover;*/
-  overflow: hidden;
+  -o-background-size: cover;
+  overflow: hidden; 
   display: grid;
   grid-template-columns: auto 70vw auto; 
   grid-template-rows: 1.2fr 4.5fr 1fr;
@@ -67,6 +61,7 @@ nav ul li {
 
 .card
 {
+  min-height: 50px;
   overflow: hidden;
   position: relative;
   background: #838590;
@@ -234,8 +229,6 @@ footer {
     position: fixed;
     top: 50%;
     left: 50%;
-    /*top y left arriba se refieren al VP pero en el translate 
-    de abajo se refiere a sí mismo*/
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid;
@@ -296,7 +289,6 @@ footer {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,.5);
-    /*lo que hace esto de abajo es que mientras esto sea invisible no capture click events*/
     pointer-events: none;
     transition: 200ms ease-in-out;
 
@@ -355,10 +347,6 @@ footer {
   {
     display: none;
   }
-
-  svg {
-    display: none;
-  }
 }
 
 @media  (min-width: 400px) and (max-width: 767px) {
@@ -401,3 +389,9 @@ footer {
     padding: 0.5em;
   }
 } 
+
+@media screen and (max-height: 280px) {
+  body {
+    overflow: scroll;
+  }
+}
