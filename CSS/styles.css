@@ -1,3 +1,6 @@
+/****************
+General settings
+*****************/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,6 +12,10 @@
   box-sizing: inherit;
 }
 
+:root {
+  --gradient: linear-gradient(145deg, #8c8e9a, #767882);
+}
+
 body > * {border-radius: 1rem;}
 
 body
@@ -16,7 +23,7 @@ body
   height: 100vh;
   width: 100vw;
   background-size: cover;
-  background: linear-gradient(145deg, #8c8e9a, #767882);
+  background: var(--gradient);
   -webkit-background-size: cover; 
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,6 +34,10 @@ body
   grid-row-gap: 2em;
   grid-column-gap: 0;
 }
+
+/***
+Nav 
+***/
 
 nav {
   background-color: #26262A;
@@ -46,6 +57,10 @@ nav ul li {
   list-style: none;
   font-size: 2rem;
 }
+
+/***************
+Board and cards
+****************/
 
 .board
 {
@@ -75,7 +90,60 @@ nav ul li {
               inset -15px -15px 29px #b0b2c1;
 }
 
+.disc {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+}
 
+.card:hover,
+.reset:hover,
+[type="range"]:hover {
+  cursor: pointer;
+}
+
+.card:active,
+.reset:active
+{
+  transform: scale(.92);
+  transition: transform .3s;
+}
+
+.reset:active {
+  fill: lightgreen;
+  stroke: lightgreen;
+}
+
+.card.flip
+{
+  transform: rotateY(180deg);
+}
+
+.back-face,
+.front-face
+{
+  width: 100%;  
+  position: absolute;
+  padding: 1rem;
+}
+
+.front-face
+{
+  transform: rotateY(180deg);
+  z-index:11;
+}
+
+.d-none {
+  display:none;
+}
+
+.d-block {
+  display:block;
+}
+
+/***************
+Volume and reset
+*****************/
 .controls-1 {
   grid-row: 2/3;
   grid-column: 1/2;
@@ -164,6 +232,10 @@ label {
   font-family: monospace;
 }
 
+/*****
+Footer
+******/
+
 footer {
   background-color: #6A6C75;
   grid-row: 3/4;
@@ -174,56 +246,9 @@ footer {
   align-items: center;
 }
 
-.disc {
-  position: absolute;
-  width: 90%;
-  height: 80%;
-}
-
-.card:hover,
-.reset:hover,
-[type="range"]:hover {
-  cursor: pointer;
-}
-
-.card:active,
-.reset:active
-{
-  transform: scale(.92);
-  transition: transform .3s;
-}
-
-.reset:active {
-  fill: lightgreen;
-  stroke: lightgreen;
-}
-
-.card.flip
-{
-  transform: rotateY(180deg);
-}
-
-.back-face,
-.front-face
-{
-  width: 100%;  
-  position: absolute;
-  padding: 1rem;
-}
-
-.front-face
-{
-  transform: rotateY(180deg);
-  z-index:11;
-}
-
-.d-none {
-  display:none;
-}
-
-.d-block {
-  display:block;
-}
+/*****
+Modal
+*****/
 
 .modal {
     position: fixed;
@@ -236,7 +261,7 @@ footer {
     background-color: #26262A;
     width: 600px;
     max-width: 80%;
-    color: white;
+    color: #fff;
     max-height: 80vh;
     overflow: scroll;
 }
@@ -269,7 +294,7 @@ footer {
     background: none;
     font-size: 1.25rem;
     font-weight: bold;
-    color: white;
+    color: #fff;
     text-align: center;
 }
 
@@ -318,6 +343,10 @@ footer {
 .modal-body > span {
   color: lightgreen;
 }
+
+/***********
+Media Queries
+************/
 
 @media screen and (orientation: portrait) {
   body::after {
@@ -398,5 +427,11 @@ footer {
 @media (max-height: 315) {
   body {
     overflow: scroll;
+  }
+}
+
+@media (min-width: 1600px) {
+  nav ul li{
+    font-size: 3rem;
   }
 }

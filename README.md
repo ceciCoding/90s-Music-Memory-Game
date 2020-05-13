@@ -1,12 +1,12 @@
 # 90s Music Memory Game
 
-![MemoryGame](Images/memory-readme.png)
-
 ## Sections
 * [Description](#Description)
 * [How to use](#How)
 * [Technologies](#Technologies)
 * [Contributions](#Contributions)
+
+![MemoryGame](Images/memory-readme.png)
 
 ## Description
 
@@ -16,7 +16,7 @@ It will only be showcased to potential employers and all the songs on it are cut
 
 ## How to use
 
-Its only prerequirement is to have a browser. The deployment can be seen [here](https://github.com/ceciCoding/90s-Music-Memory-Game). <br>
+Its only prerequirement is to have a browser. The deployment can be seen [here](https://github.com/ceciCoding/90s-Music-Memory-Game). Landscape orientation is needed to play with a smartphone<br>
 The playing flow is finding matches between two albums. When a match occurs a song of the correspondent album will play until another album is clicked. <br>
 There is a reset button to the left that restarts the game and a volume handler to the right. 
 
