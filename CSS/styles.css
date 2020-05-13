@@ -1,3 +1,6 @@
+/****************
+General settings
+*****************/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,24 +12,32 @@
   box-sizing: inherit;
 }
 
-body > * {border-radius: .5rem;}
+:root {
+  --gradient: linear-gradient(145deg, #8c8e9a, #767882);
+}
+
+body > * {border-radius: 1rem;}
 
 body
 {
   height: 100vh;
   width: 100vw;
   background-size: cover;
-  background: linear-gradient(145deg, #8c8e9a, #767882);
+  background: var(--gradient);
   -webkit-background-size: cover; 
   -moz-background-size: cover;
   -o-background-size: cover;
-  overflow: hidden; 
+  overflow: hidden;
   display: grid;
   grid-template-columns: auto 70vw auto; 
   grid-template-rows: 1.2fr 4.5fr 1fr;
   grid-row-gap: 2em;
   grid-column-gap: 0;
 }
+
+/***
+Nav 
+***/
 
 nav {
   background-color: #26262A;
@@ -41,11 +52,15 @@ nav {
 
 
 nav ul li {
-  font-family: 'Technology', monospace;
+  font-family: 'Technology', 'Share Tech Mono',monospace;
   color: lightgreen;
   list-style: none;
   font-size: 2rem;
 }
+
+/***************
+Board and cards
+****************/
 
 .board
 {
@@ -61,8 +76,8 @@ nav ul li {
 
 .card
 {
-  min-height: 50px;
   overflow: hidden;
+  min-height: 50px;
   position: relative;
   background: #838590;
   transform:scale(1);
@@ -75,7 +90,60 @@ nav ul li {
               inset -15px -15px 29px #b0b2c1;
 }
 
+.disc {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+}
 
+.card:hover,
+.reset:hover,
+[type="range"]:hover {
+  cursor: pointer;
+}
+
+.card:active,
+.reset:active
+{
+  transform: scale(.92);
+  transition: transform .3s;
+}
+
+.reset:active {
+  fill: lightgreen;
+  stroke: lightgreen;
+}
+
+.card.flip
+{
+  transform: rotateY(180deg);
+}
+
+.back-face,
+.front-face
+{
+  width: 100%;  
+  position: absolute;
+  padding: 1rem;
+}
+
+.front-face
+{
+  transform: rotateY(180deg);
+  z-index:11;
+}
+
+.d-none {
+  display:none;
+}
+
+.d-block {
+  display:block;
+}
+
+/***************
+Volume and reset
+*****************/
 .controls-1 {
   grid-row: 2/3;
   grid-column: 1/2;
@@ -164,6 +232,10 @@ label {
   font-family: monospace;
 }
 
+/*****
+Footer
+******/
+
 footer {
   background-color: #6A6C75;
   grid-row: 3/4;
@@ -174,56 +246,9 @@ footer {
   align-items: center;
 }
 
-.disc {
-  position: absolute;
-  width: 90%;
-  height: 80%;
-}
-
-.card:hover,
-.reset:hover,
-[type="range"]:hover {
-  cursor: pointer;
-}
-
-.card:active,
-.reset:active
-{
-  transform: scale(.92);
-  transition: transform .3s;
-}
-
-.reset:active {
-  fill: lightgreen;
-  stroke: lightgreen;
-}
-
-.card.flip
-{
-  transform: rotateY(180deg);
-}
-
-.back-face,
-.front-face
-{
-  width: 100%;  
-  position: absolute;
-  padding: 1rem;
-}
-
-.front-face
-{
-  transform: rotateY(180deg);
-  z-index:11;
-}
-
-.d-none {
-  display:none;
-}
-
-.d-block {
-  display:block;
-}
+/*****
+Modal
+*****/
 
 .modal {
     position: fixed;
@@ -236,7 +261,7 @@ footer {
     background-color: #26262A;
     width: 600px;
     max-width: 80%;
-    color: white;
+    color: #fff;
     max-height: 80vh;
     overflow: scroll;
 }
@@ -254,7 +279,7 @@ footer {
 }
 
 .title {
-    font-family: 'Technology', monospace;
+    font-family: 'Technology', 'Share Tech Mono', monospace;
     font-size: 1.5rem;
     font-weight: bold;
     color: lightgreen;
@@ -269,7 +294,7 @@ footer {
     background: none;
     font-size: 1.25rem;
     font-weight: bold;
-    color: white;
+    color: #fff;
     text-align: center;
 }
 
@@ -310,7 +335,7 @@ footer {
   align-items: center;
   margin-bottom: 1rem;
   border-radius: 8px;
-  font-family: 'Technology', monospace;
+  font-family: 'Technology', 'Share Tech Mono', monospace;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -319,19 +344,23 @@ footer {
   color: lightgreen;
 }
 
+/***********
+Media Queries
+************/
+
 @media screen and (orientation: portrait) {
   body::after {
     content: "Turn your device to play";
     width: 100vw;
     height: 100vh;
     color: lightgreen;
-    font-family: 'Technology', monospace;
-    text-transform: uppercase;
+    font-family: 'Technology', 'Share Tech Mono', sans-serif;
     font-size: 3rem;
     overflow: hidden;
     text-align: center; 
-    margin-top: 40vh;
+    margin-top: 20vh;
     background-color: linear-gradient(145deg, #8c8e9a, #767882); 
+    padding: 1rem;
   }
 
   nav,
@@ -349,13 +378,18 @@ footer {
   }
 }
 
-@media  (min-width: 400px) and (max-width: 767px) {
+@media  (max-width: 812px) {
   body,
   .board {
     grid-gap: .5em; 
   }
+
+  body {
+    grid-template-rows: 1fr 5fr 1fr;
+  }
+
   nav ul li {
-    font-size: 1.2em;
+    font-size: 1rem;
   }
 
   .back-face,
@@ -372,12 +406,12 @@ footer {
   } 
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 813px) and (max-width: 1023px) {
   body {
     grid-gap: .5em;
     height: 100vh;
     grid-template-columns: 1fr 70vw 1fr;
-    grid-template-rows: 6rem 50% 6rem;
+    grid-template-rows: 1fr 5fr 1fr;
   }
 
   .board {
@@ -390,8 +424,14 @@ footer {
   }
 } 
 
-@media screen and (max-height: 280px) {
+@media (max-height: 315) {
   body {
     overflow: scroll;
+  }
+}
+
+@media (min-width: 1600px) {
+  nav ul li{
+    font-size: 3rem;
   }
 }
