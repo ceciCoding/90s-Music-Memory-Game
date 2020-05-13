@@ -1,5 +1,6 @@
 # 90s Music Memory Game
-___
+
+![MemoryGame](Images/memory-readme.png)
 
 ## Sections
 * [Description](#Description)
@@ -16,8 +17,8 @@ It will only be showcased to potential employers and all the songs on it are cut
 ## How to use
 
 Its only prerequirement is to have a browser. The deployment can be seen [here](https://github.com/ceciCoding/90s-Music-Memory-Game). <br>
-The playing flow is finding matches between two albums. When a match occurs a song of the correspondent album will play. <br>
-There is a reset button to the left that will restart the game and a volume handler to the right. 
+The playing flow is finding matches between two albums. When a match occurs a song of the correspondent album will play until another album is clicked. <br>
+There is a reset button to the left that restarts the game and a volume handler to the right. 
 
 ## Technologies
 
@@ -27,6 +28,7 @@ There is a reset button to the left that will restart the game and a volume hand
 ## Contributions
 
 Contributions are welcome in the form of pull requests 🦄
+
 
 
 
