@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 /****************
 General settings
 *****************/
+=======
+@font-face {
+font-family: "Technology";
+src: url("Font/technology-webfont.woff") format("woff"),
+url("Font/technology-webfont.woff2") format("woff2"),
+}
+
+>>>>>>> font detail
 * {
   box-sizing: border-box;
   padding: 0;
